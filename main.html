@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Banking Term Generator</title>
+	<meta charset="UTF-8">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
+	<style type="text/css">
+		body {
+		font-family: 'Open Sans', sans-serif;
+		text-align: center;
+		padding-top: 100px;
+		background: #2c3e50;
+		color: #fff }
+		h1 {
+			font-size: 2em;
+		}
+		#result {
+			font-size: 4em;
+		}
+		#generate {
+			background-color: #2c3e50;
+			font-size: 1em;
+			color: #fff;
+			border: solid 1px;
+			padding:20px;
+			margin-top: 20px;
+		}
+
+	</style>
+	<script type="text/javascript">
+		function generator(){
+			
+			var firstWords = [
+			"Havale",
+			"Banka Transferi",
+			"Hesap Değişikliği",
+			"Kullanıcı Bilgileri",
+			"Havale",];
+			
+			var lastWords = [
+			 "Onayı",
+			 "Değişikliği",
+			 "Güncellemesi",
+			 "Değişikliği",]
+			
+
+			var random1 = parseInt(Math.random() * firstWords.length);
+			var random2 = parseInt(Math.random() * lastWords.length);
+			//var randomfull = parseInt(Math.random() * fullnamelist.length);		
+			console.log(random1);
+			var sentence = firstWords[random1] + " " + lastWords[random2];
+
+			finalname=sentence;
+			if(document.getElementById("result")){
+				document.getElementById("placeholder").removeChild(document.getElementById("result"));
+			}
+			
+			var element = document.createElement("div");
+			element.setAttribute("id", "result");
+			element.appendChild(document.createTextNode(finalname));
+			document.getElementById("placeholder").appendChild(element);
+		}	
+	</script>
+</head>
+<body>
+	<div id="generator">
+		<h1>Bankacılık İçin Lorem İpsum</h1>
+		<div id="placeholder"><div id="result">''Kredi Hesabı Değişiklik Süreci''</div></div>
+		<input id="generate" type="button" value="SEVEMEDİM" onclick="generator()">		
+	</div>
+
+</body>
+</html>
